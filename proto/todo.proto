@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package proto;
+
+message Todo {
+  string id = 1;
+  string userId = 2;
+  string title = 3;
+  string description = 4;
+  bool isDone = 5;
+}
+
+message CreateTodoRequest { Todo todo = 1; }
+message UpdateTodoRequest { Todo todo = 1; }
+message DeleteTodoRequest { Todo todo = 1; }
+message GetTodoRequest { string id = 1; }
+message ListTodoRequest {}
+
+message CreateTodoResponse {Todo todo = 1;}
+message UpdateTodoResponse {Todo todo = 1;}
+message DeleteTodoResponse { bool success = 1; }
+message GetTodoResponse { Todo todo = 1; }
+message ListTodoResponse { Todo todo = 1; }
+
